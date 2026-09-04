@@ -12,3 +12,5 @@ chmod +x "$DOTFILES/bin/tmux-sessionizer"
 
 echo "linked:"
 ls -l ~/.tmux.conf ~/.local/bin/tmux-sessionizer ~/.config/ghostty/config
+
+ln -sfn "$DOTFILES/zsh/.zshrc" ~/.zshrc
