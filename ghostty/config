@@ -1,0 +1,29 @@
+# --- titlebar ---
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = transparent
+macos-option-as-alt = true
+
+# --- theme ---
+theme = Catppuccin Mocha
+background = #161616
+
+# --- font ---
+font-size = 27
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+adjust-cell-height = 5%
+
+# --- breathing room ---
+window-padding-x = 14
+window-padding-y = 14
+window-padding-balance = true
+
+# --- frosted glass ---
+background-opacity = 0.85
+background-blur = 20
+
+# --- misc ---
+mouse-hide-while-typing = true
+
+macos-non-native-fullscreen = true

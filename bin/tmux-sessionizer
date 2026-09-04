@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+SEARCH_PATHS=(
+    ~/dev/problem
+    ~/dev/projects
+    ~/dev/sdet
+    ~/dev/tools
+    ~/dev/doc
+)
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    existing=()
+    for p in "${SEARCH_PATHS[@]}"; do
+        [[ -d $p ]] && existing+=("$p")
+    done
+    [[ ${#existing[@]} -eq 0 ]] && { echo "no search paths exist; edit SEARCH_PATHS"; exit 1; }
+    selected=$(find "${existing[@]}" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | fzf)
+fi
+
+[[ -z $selected ]] && exit 0
+
+selected_name=$(basename "$selected" | tr . _)
+
+if ! tmux has-session -t="$selected_name" 2>/dev/null; then
+    tmux new-session -ds "$selected_name" -c "$selected"
+fi
+
+if [[ -z $TMUX ]]; then
+    tmux attach-session -t "$selected_name"
+else
+    tmux switch-client -t "$selected_name"
+fi
