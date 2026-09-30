@@ -6,6 +6,7 @@ SEARCH_PATHS=(
     ~/dev/sdet
     ~/dev/tools
     ~/dev/doc
+    ~/School/*/*
 )
 
 if [[ $# -eq 1 ]]; then
