@@ -8,7 +8,7 @@ theme = Catppuccin Mocha
 background = #161616
 
 # --- font ---
-font-size = 17
+font-size = 27
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
@@ -27,5 +27,3 @@ background-blur = 20
 mouse-hide-while-typing = true
 
 macos-non-native-fullscreen = true
-keybind = performable:ctrl+c=copy_to_clipboard
-keybind = ctrl+v=paste_from_clipboard
